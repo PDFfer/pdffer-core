@@ -1,0 +1,80 @@
+POST http://localhost:8080/pdffer/download/default
+Content-Type: application/json
+
+{"filename": "default.pdf", "payload": {"name": "Fed", "surname": "Mestrone"}}
+
+###
+POST http://localhost:8080/pdffer/email/default
+Content-Type: application/json
+
+{"emailTo": ["fedmest@icloud.com"], "subject": "An PDFfer Email for You!", "message": "Dear Sir/Madam,\n\nWelcome! This is a long long message\nWith new lines and stuff!\n\nBy Fed\n\n", "filename": "default.pdf", "payload": {"name": "Fed", "surname": "Mestrone"}}
+
+###
+POST http://localhost:8080/pdffer/email/default
+Content-Type: application/json
+
+{"emailTo": ["fedmest@icloud.com"], "sendFrom": "Fed <fed@email.it>", "subject": "An PDFfer Email for You!", "message": "Dear Sir/Madam,\n\nWelcome! This is a long long message\nWith new lines and stuff!\n\nBy Fed\n\n", "filename": "default.pdf", "payload": {"name": "Fed", "surname": "Mestrone"}}
+
+###
+POST http://localhost:8080/pdffer/email/default
+Content-Type: application/json
+
+{"emailTo": ["fedmest@icloud.com"], "sendFrom": "PDF Fed <pdffed@email.it>", "replyTo": "Fed <fed@email.it>", "subject": "An PDFfer Email for You!", "message": "Dear Sir/Madam,\n\nWelcome! This is a long long message\nWith new lines and stuff!\n\nBy Fed\n\n", "filename": "default.pdf", "payload": {"name": "Fed", "surname": "Mestrone"}}
+
+###
+POST http://localhost:8080/pdffer/email/invoice
+Content-Type: application/json
+
+{
+  "emailTo": [
+    "fedmest@icloud.com"
+  ],
+  "sendFrom": "PDFfer <pdffer@eduneko.eu>",
+  "replyTo": "Federico <federico@eduneko.eu>",
+  "subject": "An PDFfer Email for You!",
+  "message": "Dear Sir/Madam,\n\nWelcome! This is a long long message\nWith new lines and stuff!\n\nBy Fed\n\n",
+  "filename": "default.pdf",
+  "payload": {
+    "invoiceNo": "INV0001/21",
+    "invoiceDate": "2021-08-13",
+    "dueDate": "2021-09-13",
+    "client": "Fed Mestrone",
+    "sender": "PDFfer Inc.",
+    "clientAddress": "123 My Street\nPC1 2AB My Town\nUK",
+    "senderAddress": "456 Their Street\nPC3 9CD Their Town\nUK",
+    "clientEmail": "fed@email.it",
+    "senderEmail": "pdffer@inc.us",
+    "clientTaxCode": "123456789",
+    "senderTaxCode": "987654321",
+    "currency": "GBP",
+    "lineItems": [
+      {
+        "description": "My first product",
+        "quantity": 10,
+        "unitFormat": "%dpc",
+        "unitPrice": 105,
+        "taxName": "VAT",
+        "taxRate": 17.5
+      },
+      {
+        "description": "My second product",
+        "quantity": 3,
+        "unitFormat": "%d",
+        "unitPrice": 99,
+        "taxName": "VAT",
+        "taxRate": 5
+      },
+      {
+        "description": "My third product",
+        "quantity": 1,
+        "unitFormat": "%d days",
+        "unitPrice": 1050,
+        "taxName": "",
+        "taxRate": 0
+      }
+    ],
+    "footer1": "PDFfer for PluralSight\nAn edition of PDFfer for the students at PluralSight",
+    "footer2": "Made with love for PluralSight students",
+    "bankDetails": "My Bank!!!"
+  }
+}

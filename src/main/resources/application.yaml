@@ -1,0 +1,26 @@
+pdffer:
+  mailer:
+    send-from:
+      name: PDFfer
+      address: pdf@pdffer.domain
+    reply-to:
+      name: PDFfer Admin
+      address: admin@pdffer.domain
+    smtp:
+      host: in-v3.mailjet.com
+      port: 587
+      username: yourmailerusernameyourmaileruser
+      password: yourmailerpasswordyourmailerpass
+      java-mail-properties:
+        mail.transport.protocol: "smtp"
+        mail.smtp.auth: "true"
+        mail.smtp.starttls.enable: "true"
+        mail.debug: "true"
+    controller:
+      base-uri: nekomailpdf
+      email-uri: mail
+  web:
+    controller:
+      base-uri: nekopdf
+      download-uri: download
+      save-uri: save

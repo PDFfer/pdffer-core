@@ -1,0 +1,90 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java-library'
+	id 'maven-publish'
+	id 'signing'
+}
+
+group = 'org.nekosoft.pdffer'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+java {
+//	withJavadocJar()
+	withSourcesJar()
+}
+
+bootJar {
+  enabled = false
+}
+
+jar {
+  enabled = true
+}
+
+dependencies {
+	api(project(':pdffer-template'))
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-mail'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+ext.isReleaseVersion = !version.endsWith("-SNAPSHOT")
+
+publishing {
+	repositories {
+		maven {
+			def releaseRepo = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+			def snapshotRepo = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+			url = isReleaseVersion ? releaseRepo : snapshotRepo
+			credentials {
+				username = project.hasProperty('ossrhUsername') ? ossrhUsername : System.env.OSSRH_USERNAME
+				password = project.hasProperty('ossrhPassword') ? ossrhPassword : System.env.OSSRH_PASSWORD
+			}
+		}
+	}
+
+	publications {
+		mavenJava(MavenPublication) {
+			pom {
+				description = 'A library that makes is quick and easy to generate PDFs from any Spring Boot application'
+				url = 'https://pdffer.nekosoft.org/'
+				from components.java
+				artifact (jar) {
+					classifier = null
+				}
+				licenses {
+					license {
+						name = 'The Apache License, Version 2.0'
+						url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+					}
+				}
+				scm {
+					connection = 'scm:git:git@github.com:PDFfer/pdffer-core.git'
+					developerConnection = 'scm:git:git@github.com:PDFfer/pdffer-core.git'
+					url = 'https://github.com/PDFfer/pdffer-core'
+				}
+			}
+		}
+	}
+}
+
+signing {
+	sign publishing.publications.mavenJava
+}
+tasks.withType(Sign) {
+	onlyIf { isReleaseVersion }
+}

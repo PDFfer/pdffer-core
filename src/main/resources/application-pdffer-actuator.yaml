@@ -1,0 +1,5 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: pdffer-web-controller-props, pdffer-mailer-controller-props, pdffer-mailer-props, pdffer-template-registry, health, info

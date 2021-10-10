@@ -1,0 +1,92 @@
+{"properties": [
+  {
+    "name": "pdffer.mailer.send-from.name",
+    "type": "java.lang.String",
+    "description": "The name or label associated to the sender's email address"
+  },
+  {
+    "name": "pdffer.mailer.send-from.address",
+    "type": "java.lang.String",
+    "description": "The sender's email address"
+  },
+  {
+    "name": "pdffer.web.controller.base-uri",
+    "type": "java.lang.String",
+    "description": "The base URI at which the web controller for the PDFfer endpoints will be registered"
+  },
+  {
+    "name": "pdffer.mailer.controller.base-uri",
+    "type": "java.lang.String",
+    "description": "The base URI at which the mailer controller for the PDFfer endpoints will be registered"
+  },
+  {
+    "name": "pdffer.mailer.reply-to.name",
+    "type": "java.lang.String",
+    "description": "The name or label associated to the email address to which replies should be sent"
+  },
+  {
+    "name": "pdffer.mailer.reply-to.address",
+    "type": "java.lang.String",
+    "description": "The email address to which replies should be sent"
+  },
+  {
+    "name": "pdffer.mailer.smtp.host",
+    "type": "java.lang.String",
+    "description": "The SMTP host to handle the sending of email messages"
+  },
+  {
+    "name": "pdffer.mailer.smtp.port",
+    "type": "java.lang.String",
+    "description": "The port of the SMTP host"
+  },
+  {
+    "name": "pdffer.mailer.smtp.username",
+    "type": "java.lang.String",
+    "description": "The username to authenticate to the SMTP host"
+  },
+  {
+    "name": "pdffer.mailer.smtp.password",
+    "type": "java.lang.String",
+    "description": "The password to be used with the SMTP host"
+  },
+  {
+    "name": "pdffer.mailer.smtp.java-mail-properties",
+    "type": "java.util.Properties",
+    "description": "A free-format set of properties that will be passed to the SMTP connection"
+  },
+  {
+    "name": "pdffer.mailer.smtp.java-mail-properties",
+    "type": "java.util.Properties",
+    "description": "A free-format set of properties that will be passed to the SMTP connection"
+  },
+  {
+    "name": "pdffer.mailer.controller.email-uri",
+    "type": "java.lang.String",
+    "description": "The URI of the email endpoint for the mailer controller"
+  },
+  {
+    "name": "pdffer.web.controller.download-uri",
+    "type": "java.lang.String",
+    "description": "The URI of the download endpoint for the web controller"
+  },
+  {
+    "name": "pdffer.web.controller.save-uri",
+    "type": "java.lang.String",
+    "description": "The URI of the save endpoint for the web controller"
+  },
+  {
+    "name": "pdffer.skip.web.controller",
+    "type": "java.lang.Boolean",
+    "description": "Whether to disable the PDFfer web controller"
+  },
+  {
+    "name": "pdffer.skip.mailer.controller",
+    "type": "java.lang.Boolean",
+    "description": "Whether to disable the PDFfer mailer controller"
+  },
+  {
+    "name": "pdffer.skip.mailer.beans",
+    "type": "java.lang.Boolean",
+    "description": "Whether to disable the PDFfer mailer beans (also disables the mailer controllers)"
+  }
+]}

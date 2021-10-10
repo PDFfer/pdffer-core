@@ -1,0 +1,12 @@
+${AnsiColor.BRIGHT_CYAN}               ######  #####   #######                       ${AnsiColor.BRIGHT_GREEN}    /\     /\
+${AnsiColor.BRIGHT_CYAN}  #    #       #     # #    #  #       ###### ###### #####   ${AnsiColor.BRIGHT_GREEN}   {  `---'  }
+${AnsiColor.BRIGHT_CYAN}   #    #      #     # #     # #       #      #      #    #  ${AnsiColor.BRIGHT_GREEN}   {  O   O  }
+${AnsiColor.BRIGHT_CYAN}    #    #     ######  #     # #####   #####  #####  #    #  ${AnsiColor.BRIGHT_GREEN}   ~~>  V  <~~
+${AnsiColor.BRIGHT_CYAN}   #    #      #       #     # #       #      #      #####   ${AnsiColor.BRIGHT_GREEN}    \  \|/  /
+${AnsiColor.BRIGHT_CYAN}  #    #       #       #    #  #       #      #      #   #   ${AnsiColor.BRIGHT_GREEN}     `-----'
+${AnsiColor.BRIGHT_CYAN}               #       #####   #       #      ###### #    #  ${AnsiColor.BRIGHT_GREEN}     /     \
+
+${AnsiColor.BRIGHT_MAGENTA}${application.title}
+${AnsiColor.DEFAULT}Artifact Version: ${AnsiColor.BRIGHT_YELLOW}${application.formatted-version}
+${AnsiColor.DEFAULT}Spring Boot Version: ${AnsiColor.BRIGHT_YELLOW}${spring-boot.formatted-version}
+${AnsiColor.DEFAULT}
